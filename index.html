@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncle 粉丝群群规</title>
+    <!-- 百浪息o温馨提示:页面代码遵循BSD3_新发布，未经特殊说明的文本按照 [CC] 创意共享-署名-非商业使用4.0 授权 -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Product+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Marked.js -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Product Sans', 'Noto Sans SC', 'sans-serif'],
+                    },
+                    colors: {
+                        surface: '#FDFCF4',
+                        'surface-variant': '#E4E7D7',
+                        primary: '#3F6A42',
+                        'on-primary': '#FFFFFF',
+                        'primary-container': '#C0EFBF',
+                        'on-surface': '#1A1C18',
+                        outline: '#73796E'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #E4E7D7; border-radius: 10px; }
+        .md-content strong { color: #3F6A42; font-weight: 700; }
+        .md-content a { color: #2a5a2d; text-decoration: underline; text-decoration-thickness: 2px; }
+        .md-content ul { list-style-type: disc; padding-left: 1.2rem; margin-top: 0.5rem; }
+        .md-content p { margin-bottom: 0.5rem; }
+        .fade-in-up { animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Modal Animation */
+        .modal-enter { opacity: 0; transform: scale(0.95); pointer-events: none; }
+        .modal-enter-active { opacity: 1; transform: scale(1); pointer-events: auto; transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .modal-exit { opacity: 0; transform: scale(0.95); pointer-events: none; transition: all 0.2s ease-in; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen selection:bg-primary-container selection:text-primary relative">
+
+    <!-- ========================================== -->
+    <!--          配置区域 (JSON CONFIG)            -->
+    <!--          actionType: "embed" (弹窗)       -->
+    <!--          actionType: "link"  (跳转)       -->
+    <!-- ========================================== -->
+    <script id="app-config" type="application/json">
+    {
+        "header": {
+            "title": "Uncle城入群须知",
+            "subtitle": "祝你开心喵",
+            "date": "2025-02-04 更新"
+        },
+        "intro": "本群是 Uncle 城的粉丝交流群喵！\n条目格式：**描述**，备注与**处理**。\n群规除了 a) 以外**其余都是禁止事项**。",
+        "rules": [
+            {
+                "icon": "☕",
+                "title": "a) 坐和放宽~",
+                "content": "Relax and enjoy~ 欢迎光临！"
+            },
+            {
+                "icon": "🤐",
+                "title": "b) 政治 / 恶俗 / 性别对立",
+                "content": "涉及国内外政治言论、男女权内容、恶俗、LGBT 类的话题。\n- 恶俗包含人肉搜索、获取公开个人信息取乐\n- 不要发直接关于男娘、药娘的话题\n- **处理**：禁言、国内政治/男女权等72小时起步，最高黑名单"
+            },
+            {
+                "icon": "🔞",
+                "title": "c) 色情 / 暴力 / 违法",
+                "content": "涉及色情、暴力、血腥及类似物、药物成瘾、自残、自杀等有害于公序良俗的内容。\n- **处理**：直接黑名单\n- _O_o 好怪啊，再看一眼 o_O"
+            },
+            {
+                "icon": "📢",
+                "title": "d) 广告 / 推广",
+                "content": "群发广告售卖资源，推广性宣传、广告群邀请。\n- 包括 AFF/拉人头\n- 需先征得管理同意，刷屏从重\n- **处理**：第一次撤回并警告，第二次24小时及以上禁言，第三次黑名单"
+            },
+            {
+                "icon": "🎮",
+                "title": "e) 作弊 / 灰产",
+                "content": "讨论联机及对抗游戏开挂、买卖灰产非法相关的。\n- 群内售卖收购账号/软件等服务的按广告处理\n- **处理**：24小时禁言起步"
+            },
+            {
+                "icon": "🤬",
+                "title": "f) 刷屏 / 恶俗 / 烂梗",
+                "content": "刷屏的、恶俗用语、开黄腔、狂刷烂梗的。\n- **本群禁止鬼图、龙图、奶龙图**\n- **处理**：龙图/奶龙图 1小时禁言，鬼图 12小时禁言，其余 24小时禁言起步"
+            },
+            {
+                "icon": "🚫",
+                "title": "g) 私信骚扰 / 角色扮演",
+                "content": "私信骚扰，广告，售卖，非常规角色扮演等并被明确拒绝的。\n- 受理仅限被骚扰人举报，提供完整聊天记录\n- **处理**：黑名单"
+            },
+            {
+                "icon": "🛡️",
+                "title": "h) 攻击管理及群主",
+                "content": "攻击管理以及群主的。\n- **处理**：12小时禁言起步至黑名单\n- _那我问你那我问你，你没事跳脸群主管理干什么_"
+            },
+            {
+                "icon": "🦠",
+                "title": "i) 恶意软件 / 代码",
+                "content": "发布恶意软件，代码、网址内容；或向人提供删库命令恶意误导的。\n- 包含经由第三方伪造为官方的 json 卡片等\n- **处理**：6小时禁言起步"
+            },
+            {
+                "icon": "😵",
+                "title": "j) 过度抽象 / 地狱笑话",
+                "content": "过度抽象至使他人迷惑或有害身心健康的、人身攻击的。\n- 过于哈人的三次元地狱笑话\n- 传播社会谣言，讨论流于人身攻击的按此条从重处理\n- **处理**：12小时禁言起步"
+            },
+            {
+                "icon": "🤖",
+                "title": "k) 未经授权的BOT",
+                "content": "邀请或在本群私自搭建可互动类 Bot 的。\n- 如真有必要请先征集群主及所有管理员的同意\n- **处理**：被邀请者(Bot)黑名单，邀请者 24小时禁言起步"
+            }
+        ],
+        "tips": {
+            "title": "💡 小提示 & 管理须知",
+            "items": [
+                "NoN NSFW",
+                "视情况而定:首次警告 → 禁言 → 黑名单",
+                "群规里没写明的请先问管理/群主",
+                "整活请预先和管理沟通",
+                "aff广告请取得许可",
+                "群规长期接受意见，解释权归群主及管理员所有"
+            ]
+        },
+        "footer": {
+            "buttonText": "唔已同意，开扣",
+            "countdown": 5,
+            "actionType": "embed",
+            "url": "https://002227.xyz/pow.html",
+            "links": [
+                {
+                    "text": "其他",
+                    "url": "uuz.html"
+                },
+                {
+                    "text": "授权BSD/CC",
+                    "url": "https://zh.wikipedia.org/wiki/%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81"
+                }
+            ]
+        }
+    }
+    </script>
+    <!-- ========================================== -->
+
+    <div id="app" class="max-w-md mx-auto p-4 md:p-6 pb-32">
+        <!-- Content will be injected here -->
+    </div>
+
+    <!-- Modal Container -->
+    <div id="embed-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 modal-enter bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-surface w-full max-w-lg h-[80vh] rounded-[28px] shadow-2xl flex flex-col overflow-hidden ring-1 ring-white/20">
+            <!-- Modal Header -->
+            <div class="px-6 py-4 flex items-center justify-between border-b border-outline/10 bg-surface">
+                <h3 class="font-medium text-lg text-on-surface">验证 / 加入群聊</h3>
+                <button onclick="closeModal()" class="w-10 h-10 rounded-full hover:bg-surface-variant flex items-center justify-center transition-colors">
+                    <span class="material-symbols-rounded text-outline">close</span>
+                </button>
+            </div>
+            <!-- Modal Body (Iframe) -->
+            <div class="flex-1 bg-surface-variant/20 relative">
+                <iframe id="target-iframe" src="" class="w-full h-full border-0" allow="clipboard-read; clipboard-write"></iframe>
+                <!-- Loading indicator -->
+                <div id="iframe-loader" class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span class="material-symbols-rounded animate-spin text-primary text-3xl">progress_activity</span>
+                </div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="px-6 py-3 border-t border-outline/10 bg-surface flex justify-end">
+                <button onclick="closeModal()" class="text-primary font-medium px-4 py-2 hover:bg-primary-container/30 rounded-full transition-colors">
+                    关闭
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal Functions
+        function openModal(url) {
+            const modal = document.getElementById('embed-modal');
+            const iframe = document.getElementById('target-iframe');
+            const loader = document.getElementById('iframe-loader');
+            
+            iframe.src = url;
+            // Show loader until load
+            loader.style.display = 'flex';
+            iframe.onload = () => {
+                loader.style.display = 'none';
+            };
+
+            modal.classList.remove('hidden');
+            // Trigger animation frame
+            requestAnimationFrame(() => {
+                modal.classList.remove('modal-enter');
+                modal.classList.add('modal-enter-active');
+            });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('embed-modal');
+            const iframe = document.getElementById('target-iframe');
+            
+            modal.classList.remove('modal-enter-active');
+            modal.classList.add('modal-exit');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('modal-exit');
+                modal.classList.add('modal-enter');
+                iframe.src = ''; // Stop video/loading
+            }, 200);
+        }
+
+        // Close on clicking outside
+        document.getElementById('embed-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'embed-modal') closeModal();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const configElement = document.getElementById('app-config');
+            let config;
+            try {
+                config = JSON.parse(configElement.textContent);
+            } catch (e) {
+                document.getElementById('app').innerHTML = `<div class="p-4 bg-red-100 text-red-600">JSON 格式错误</div>`;
+                return;
+            }
+
+            const app = document.getElementById('app');
+            let htmlContent = '';
+
+            // 渲染头部
+            htmlContent += `
+                <header class="mb-6 pt-8 fade-in-up">
+                    <div class="inline-block px-4 py-1.5 mb-3 rounded-full border border-outline/20 text-sm font-medium tracking-wide text-outline">
+                        ${config.header.date}
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-normal tracking-tight mb-2 text-on-surface leading-tight">
+                        ${config.header.title}
+                    </h1>
+                    <p class="text-lg text-outline font-light ml-1">
+                        ${config.header.subtitle}
+                    </p>
+                </header>
+            `;
+
+            // 渲染简介
+            if (config.intro) {
+                const parsedIntro = marked.parse(config.intro);
+                htmlContent += `
+                    <div class="bg-primary/5 border border-primary/10 rounded-2xl p-4 mb-6 fade-in-up text-primary-900 text-sm leading-relaxed" style="animation-delay: 50ms">
+                         ${parsedIntro}
+                    </div>
+                `;
+            }
+
+            // 渲染规则
+            htmlContent += `<div class="space-y-3">`;
+            config.rules.forEach((rule, index) => {
+                const parsedContent = marked.parse(rule.content);
+                const delay = (index + 1) * 50;
+                htmlContent += `
+                    <div class="group relative bg-surface-variant/50 hover:bg-surface-variant/80 transition-all duration-300 rounded-[24px] p-5 fade-in-up overflow-hidden" style="animation-delay: ${delay}ms">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-white rounded-xl text-xl shadow-sm mt-1">
+                                ${rule.icon}
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-lg font-bold text-on-surface mb-1">${rule.title}</h3>
+                                <div class="md-content text-sm text-outline leading-relaxed opacity-90">
+                                    ${parsedContent}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            htmlContent += `</div>`;
+
+            // 渲染小提示
+            if (config.tips) {
+                const tipsList = config.tips.items.map(item => `<li class="mb-1">${item}</li>`).join('');
+                htmlContent += `
+                    <div class="mt-6 bg-[#EBEBD3] rounded-[24px] p-6 fade-in-up text-[#47483B]" style="animation-delay: 800ms">
+                        <h4 class="font-bold mb-3 flex items-center gap-2">
+                            ${config.tips.title}
+                        </h4>
+                        <ul class="list-disc pl-4 text-sm space-y-1 opacity-80">
+                            ${tipsList}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // 渲染底部按钮
+            if (config.footer) {
+                const hasCountdown = config.footer.countdown && config.footer.countdown > 0;
+                const initialText = hasCountdown ? `${config.footer.buttonText} (${config.footer.countdown}s)` : config.footer.buttonText;
+                
+                const initialDisabledClass = hasCountdown ? 'bg-gray-400 cursor-not-allowed text-white/80' : 'bg-primary text-on-primary shadow-lg hover:shadow-xl';
+                const initialDisabledAttr = hasCountdown ? 'disabled' : '';
+
+                // 决定点击动作
+                let clickAction = '';
+                if (config.footer.actionType === 'embed' && config.footer.url) {
+                    clickAction = `openModal('${config.footer.url}')`;
+                } else if (config.footer.url) {
+                    clickAction = `window.location.href='${config.footer.url}'`;
+                } else {
+                    clickAction = `alert('感谢阅读，请遵守群规！')`;
+                }
+
+                // 处理多链接
+                let footerLinksHtml = '';
+                if (config.footer.links && Array.isArray(config.footer.links)) {
+                    footerLinksHtml = config.footer.links.map(link => {
+                        if (link.url && link.url.trim() !== "") {
+                            return `<a href="${link.url}" target="_blank" class="underline decoration-dotted hover:text-primary transition-colors">${link.text}</a>`;
+                        } else {
+                            return `<span class="cursor-default">${link.text}</span>`;
+                        }
+                    }).join('<span class="mx-2 opacity-40 select-none">•</span>');
+                } else if (config.footer.text) {
+                    footerLinksHtml = `<span>${config.footer.text}</span>`;
+                }
+
+                htmlContent += `
+                    <div class="fixed bottom-6 left-0 right-0 px-4 flex justify-center fade-in-up" style="animation-delay: 900ms; z-index: 50;">
+                        <button id="agree-btn" 
+                            onclick="${clickAction}" 
+                            ${initialDisabledAttr}
+                            class="${initialDisabledClass} font-medium text-lg px-8 py-4 rounded-full 
+                                   transition-all active:scale-95 flex items-center gap-2">
+                            <span id="btn-icon" class="material-symbols-rounded text-xl ${hasCountdown ? 'hidden' : ''}">check</span>
+                            <span id="btn-text">${initialText}</span>
+                        </button>
+                    </div>
+                    <div class="text-center mt-8 mb-24 text-xs text-outline/60 fade-in-up flex justify-center flex-wrap gap-y-2 px-6" style="animation-delay: 1000ms;">
+                        ${footerLinksHtml}
+                    </div>
+                `;
+            }
+
+            app.innerHTML = htmlContent;
+
+            // 倒计时逻辑
+            const countdownSeconds = config.footer.countdown;
+            if (countdownSeconds && countdownSeconds > 0) {
+                let timeLeft = countdownSeconds;
+                const btn = document.getElementById('agree-btn');
+                const btnText = document.getElementById('btn-text');
+                const btnIcon = document.getElementById('btn-icon');
+
+                const timer = setInterval(() => {
+                    timeLeft--;
+                    if (timeLeft > 0) {
+                        btnText.innerText = `${config.footer.buttonText} (${timeLeft}s)`;
+                    } else {
+                        clearInterval(timer);
+                        btn.disabled = false;
+                        btnText.innerText = config.footer.buttonText;
+                        btnIcon.classList.remove('hidden');
+                        btn.classList.remove('bg-gray-400', 'cursor-not-allowed', 'text-white/80');
+                        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-lg', 'hover:shadow-xl', 'animate-bounce');
+                        setTimeout(() => btn.classList.remove('animate-bounce'), 1000);
+                    }
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
