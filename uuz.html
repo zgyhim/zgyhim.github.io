@@ -1,564 +1,307 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>其他</title>
-
     <style>
-
         :root {
-
             /* Light Mode Colors */
-
             --md-sys-color-background: #fffbff;
-
             --md-sys-color-on-background: #1d1b1e;
-
             --md-sys-color-surface: #f7f2fa; /* Slightly tinted surface */
-
             --md-sys-color-on-surface: #49454f;
-
             --md-sys-color-primary: #6750a4;
-
             --md-sys-color-on-primary: #ffffff;
-
             --md-sys-color-outline: #79747e;
-
             --font-family: 'Google Sans', 'Roboto', system-ui, -apple-system, sans-serif;
-
             --radius-large: 28px;
-
             --radius-medium: 16px;
-
         }
-
 
         @media (prefers-color-scheme: dark) {
-
             :root {
-
                 /* Dark Mode Colors */
-
                 --md-sys-color-background: #1c1b1f;
-
                 --md-sys-color-on-background: #e6e1e5;
-
                 --md-sys-color-surface: #262529; /* Dark surface */
-
                 --md-sys-color-on-surface: #cac4d0;
-
                 --md-sys-color-primary: #d0bcff;
-
                 --md-sys-color-on-primary: #381e72;
-
                 --md-sys-color-outline: #938f99;
-
             }
-
         }
-
 
         /* Reset & Base */
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
         
-
         body {
-
             font-family: var(--font-family);
-
             background-color: var(--md-sys-color-background);
-
             color: var(--md-sys-color-on-background);
-
             line-height: 1.6;
-
             -webkit-font-smoothing: antialiased;
-
             padding: 24px;
-
             transition: background-color 0.3s ease, color 0.3s ease;
-
         }
-
 
         /* Layout Container */
-
         .container {
-
             max-width: 720px;
-
             margin: 0 auto;
-
             padding-bottom: 60px;
-
         }
-
 
         /* Header Section */
-
         header {
-
             margin-bottom: 40px;
-
             margin-top: 20px;
-
             text-align: left;
-
         }
-
 
         h1 {
-
             font-size: 2.75rem; /* Display Small/Medium */
-
             font-weight: 400;
-
             line-height: 1.1;
-
             margin-bottom: 12px;
-
             color: var(--md-sys-color-on-background);
-
             letter-spacing: -0.02em;
-
         }
-
 
         .meta-info {
-
             font-size: 0.9rem;
-
             color: var(--md-sys-color-outline);
-
             font-weight: 500;
-
         }
-
 
         /* Policy Cards/Sections */
-
         .policy-section {
-
             background-color: var(--md-sys-color-surface);
-
             border-radius: var(--radius-large);
-
             padding: 32px;
-
             margin-bottom: 16px;
-
             transition: transform 0.2s ease;
-
         }
-
 
         .policy-section h2 {
-
             font-size: 1.5rem;
-
             font-weight: 500;
-
             margin-bottom: 16px;
-
             color: var(--md-sys-color-on-background);
-
         }
-
 
         /* Content Typography within sections */
-
         .content p {
-
             margin-bottom: 16px;
-
             color: var(--md-sys-color-on-surface);
-
             font-size: 1rem;
-
+            white-space: pre-wrap; /* Preserve newlines */
         }
-
 
         .content ul {
-
             margin-bottom: 16px;
-
             padding-left: 24px;
-
             color: var(--md-sys-color-on-surface);
-
         }
-
 
         .content li {
-
             margin-bottom: 8px;
-
         }
-
 
         .content strong {
-
             color: var(--md-sys-color-on-background);
-
             font-weight: 600;
-
         }
-
 
         .content a {
-
             color: var(--md-sys-color-primary);
-
             text-decoration: none;
-
             font-weight: 500;
-
             border-bottom: 1px solid transparent;
-
         }
-
 
         .content a:hover {
-
             border-bottom-color: var(--md-sys-color-primary);
-
         }
-
 
         /* Footer */
-
         footer {
-
             text-align: center;
-
             margin-top: 60px;
-
             padding-top: 24px;
-
             border-top: 1px solid var(--md-sys-color-outline);
-
             color: var(--md-sys-color-outline);
-
             font-size: 0.85rem;
-
         }
-
 
         /* Utility for animation */
-
         @keyframes fadeIn {
-
             from { opacity: 0; transform: translateY(10px); }
-
             to { opacity: 1; transform: translateY(0); }
-
         }
-
         .animate-in {
-
             animation: fadeIn 0.6s cubic-bezier(0.2, 0.0, 0, 1.0) forwards;
-
             opacity: 0;
-
         }
-
     </style>
-
 </head>
-
 <body>
 
-
 <!-- 
+    =================================================================
     配置区域 (CONFIGURATION)
-
     在此处修改 JSON 内容即可更新页面。
-
-    支持简单的 Markdown 语法：
-
-    - **加粗**
-
-    - [链接文字](url)
-
-    - - 列表项
+    注意：JSON 不支持多行字符串，请使用 \n 表示换行。
+    Markdown 链接格式为: [显示文本](链接URL)
+    =================================================================
 -->
-
 <script id="config" type="application/json">
-
 {
-
     "app_name": "百浪息",
-
     "last_updated": "2026年2月4日",
-
     "sections": [
-
         {
-
             "title": "0. 引言",
-
             "content": "**欢迎光临暗扣城粉丝群**，请遵循群规，友好互动。"
-
         },
-
         {
-
             "title": "外展服务",
-
             "content": "管理或群主可能会推出额外的服务，这些外展服务的条款以及隐私政策请在相关页面取得。"
-
         },
-
         {
-
             "title": "权限鉴定",
-
             "content": "外展的常规鉴权方法：\n\n1. 通过QQ bot自助申请。\n2. 私聊管理群主申请或者通过表单申请。\n3. 在平台验证邮箱。"
-
         },
-
         {
-
             "title": "第三方服务",
-
             "content": "CDN服务为cloudflare。"
-
         },
-
         {
-
             "title": "数据安全",
-
             "content": "请不要在群聊暴露过多的个人信息，我们不对私下群友和群友之间任何的活动负责。"
-
         },
-
         {
-
             "title": "6. 老资历",
-            "content": "(之前的群规)[https://docs.qq.com/doc/DSE1BZWxjaWhkVVJS#]可在这里取得"
+            "content": "[之前的群规](https://docs.qq.com/doc/DSE1BZWxjaWhkVVJS#)可在这里取得"
         }
-
     ],
-
     "footer_text": "CC许可."
-
 }
-
 </script>
-
 
 <!-- 主体渲染容器 -->
-
 <main class="container">
-
     <header class="animate-in" style="animation-delay: 0s;">
-
         <h1 id="page-title">其他内容</h1>
-
         <div class="meta-info">最后更新：<span id="update-date">...</span></div>
-
     </header>
 
-
     <div id="policy-content">
-
         <!-- 内容将由 JavaScript 自动生成 -->
-
     </div>
 
-
     <footer id="page-footer" class="animate-in" style="animation-delay: 0.4s;">
-
         <!-- 页脚内容 -->
-
     </footer>
-
 </main>
 
-
 <script>
-
     /**
-
      * 简单的 Markdown 解析器
-
      * 处理: **bold**, [link](url), - list, \n newlines
-
      */
-
     function parseMarkdown(text) {
-
         if (!text) return '';
-
         
-
         // 1. 转义 HTML (防止注入，保留基础安全)
-
         let html = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-
         // 2. 解析链接 [text](url)
-
+        // 之前你的JSON写反了，应该是 [之前的群规](url) 才能被这里匹配
         html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 
-
         // 3. 解析加粗 **text**
-
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
-
-        // 4. 解析列表 (以 "- " 开头的行)
-
-        // 先把文本按行分割
-
+        // 4. 解析列表 (以 "- " 或 "1. " 开头的行)
+        // 稍微增强一下，支持简单的换行处理
         let lines = html.split('\n');
-
         let inList = false;
-
         let processedLines = lines.map(line => {
-
+            // 检测列表 (简单检测 - 开头)
             if (line.trim().startsWith('- ')) {
-
                 const content = line.trim().substring(2);
-
                 if (!inList) {
-
                     inList = true;
-
                     return '<ul><li>' + content + '</li>';
-
                 }
-
                 return '<li>' + content + '</li>';
-
             } else {
-
                 if (inList) {
-
                     inList = false;
-
                     return '</ul>' + (line.trim() ? '<p>' + line + '</p>' : '');
-
                 }
-
                 // 普通段落，如果是空行则忽略，否则包裹p
-
                 return line.trim() ? '<p>' + line + '</p>' : '';
-
             }
-
         });
 
-
         if (inList) processedLines.push('</ul>');
-
         
-
         return processedLines.join('');
-
     }
 
-
     // 渲染逻辑
-
     document.addEventListener('DOMContentLoaded', () => {
-
         try {
-
             // 读取配置
-
             const configRaw = document.getElementById('config').textContent;
-
             const config = JSON.parse(configRaw);
 
-
             // 更新头部
-
             document.title = config.app_name + " - 其他";
-
+            document.getElementById('page-title').textContent = "其他内容"; // 或使用 config.title 如果有
             document.getElementById('update-date').textContent = config.last_updated;
 
-
             // 生成内容块
-
             const container = document.getElementById('policy-content');
-
             let delay = 0.1;
 
-
             config.sections.forEach((section, index) => {
-
                 const sectionEl = document.createElement('section');
-
                 sectionEl.className = 'policy-section animate-in';
-
                 sectionEl.style.animationDelay = `${delay}s`;
 
-
                 // 标题
-
                 const h2 = document.createElement('h2');
-
                 h2.textContent = section.title;
-
                 
-
                 // 内容 (Markdown 解析)
-
                 const div = document.createElement('div');
-
                 div.className = 'content';
-
                 div.innerHTML = parseMarkdown(section.content);
 
-
                 sectionEl.appendChild(h2);
-
                 sectionEl.appendChild(div);
-
                 container.appendChild(sectionEl);
 
-
                 delay += 0.1; // 瀑布流动画效果
-
             });
 
-
             // 更新页脚
-
             document.getElementById('page-footer').textContent = config.footer_text;
 
-
         } catch (e) {
-
             console.error("JSON 配置解析错误:", e);
-
             document.getElementById('policy-content').innerHTML = `
-
-                <div class="policy-section" style="border: 1px solid red; color: red;">
-
-                    <h2>配置错误</h2>
-
-                    <p>无法加载隐私政策内容，请检查 JSON 格式。</p>
-
+                <div class="policy-section" style="border: 1px solid #ff4444; color: #ff4444;">
+                    <h2 style="color: #ff4444;">配置错误</h2>
+                    <p>无法加载内容，请检查 JSON 格式是否正确。</p>
+                    <p style="font-size: 0.8rem; opacity: 0.8;">错误信息: ${e.message}</p>
                 </div>`;
-
         }
-
     });
-
 </script>
 
-
 </body>
-
 </html>
